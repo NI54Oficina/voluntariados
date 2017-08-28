@@ -59,7 +59,7 @@
     </section>
     <div id="marquesina" class="">
       <p>Seguinos en Facebook y enterate al instante de los voluntariados</p>
-      <p> <img src="" alt=""> Facebook.com/voluntariosDeLaUba/</p>
+      <p> <img src="img/fb.png" alt=""> Facebook.com/voluntariosDeLaUba/</p>
     </div>
     <section id="informacion-general">
       <div class="col-6 informacion-grupo" >
@@ -148,7 +148,7 @@
 
 
 
-      <div class="col-12">
+      <div class="col-12 orange-block">
 
         <div class="col-12 bg-orange toggler">
           <img src="img/social.svg" alt=""> <p>Social</p>
@@ -165,7 +165,7 @@
         </div>
       </div>
 
-      <div class="col-12">
+      <div class="col-12 yellow-block">
         <div class="col-12 bg-yellow toggler">
           <img src="img/radio.svg" alt=""> <p>Radio abierta itinerante</p>
         </div>
@@ -181,7 +181,7 @@
         </div>
       </div>
 
-      <div class="col-12">
+      <div class="col-12 blue-block">
         <div class="col-12 bg-blue toggler">
           <img src="img/biblioteca.svg" alt=""> <p>Biblioteca accesible CBC</p>
         </div>
@@ -197,7 +197,7 @@
         </div>
       </div>
 
-      <div class="col-12">
+      <div class="col-12 orange-block">
         <div class="col-12 bg-orange toggler">
           <img src="img/nutricion.svg" alt=""> <p>Nutrición con taller de cocina saludable</p>
         </div>
@@ -213,7 +213,7 @@
         </div>
       </div>
 
-      <div class="col-12">
+      <div class="col-12 yellow-block">
         <div class="col-12 bg-yellow toggler">
           <img src="img/musica.svg" alt=""> <p>Música</p>
         </div>
@@ -229,7 +229,7 @@
         </div>
       </div>
 
-      <div class="col-12">
+      <div class="col-12 blue-block">
         <div class="col-12 bg-blue toggler">
           <img src="img/fotografia.svg" alt=""> <p>Fotografía “Otras miradas”</p>
         </div>
@@ -245,7 +245,7 @@
         </div>
       </div>
 
-      <div class="col-12">
+      <div class="col-12 orange-block">
         <div class="col-12 bg-orange toggler">
           <img src="img/difusion.svg" alt=""> <p>Difusión de los derechos de las mujeres en los barrios</p>
         </div>
@@ -261,7 +261,7 @@
         </div>
       </div>
 
-      <div class="col-12">
+      <div class="col-12 yellow-block">
         <div class="col-12 bg-yellow toggler">
           <img src="img/trabajo.svg" alt=""> <p>Trabajo & Inclusión</p>
         </div>
@@ -381,10 +381,12 @@
         <span id="close-modal"></span>
 
         <div class="top-modal">
+
           <div class="header-img">
             <img src="img/modal.svg" alt="">
           </div>
           <p>OTROS <span>VOLUNTARIOS</span></p>
+          <div class="float-bg"></div>
         </div>
 
         <div class="bottom-modal">
@@ -514,9 +516,9 @@
   function toggle(){
     $(".toggler").on("click", function(){
 
-      $(".container-toggle").each(function(){
-        $(this).fadeOut("50");
-      });
+      // $(".container-toggle").each(function(){
+      //   $(this).fadeOut("50");
+      // });
 
       $(this).siblings(".container-toggle").toggle("slow");
 
@@ -530,7 +532,9 @@
     owl.owlCarousel({
       margin: 10,
       loop: true,
-      items:1
+      items:1,
+      autoplay:true,
+      autoplayTimeout:10000,
     });
 
 
@@ -541,7 +545,7 @@
        margin:20,
        autoWidth:true,
        autoplay:true,
-       autoplayTimeout:2000,
+       autoplayTimeout:1,
        autoplayHoverPause:true,
        nav:false
     })
