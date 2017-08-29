@@ -317,6 +317,7 @@ header .header-inner .header-inner-right p{
   right: 50px;
   border: 1px solid;
   top: 20px;
+  display: none;
 }
 
 .toggler img{
