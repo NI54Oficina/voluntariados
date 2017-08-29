@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width" /> -->
     <title>Voluntariados UBA</title>
 
   </head>
@@ -151,7 +152,7 @@
       <div class="col-12 orange-block">
 
         <div class="col-12 bg-orange toggler">
-          <img src="img/social.svg" alt=""> <p>Social</p>
+          <img src="img/social.svg" alt=""> <p>Social</p><span></span>
         </div>
 
         <div class="col-12 container-toggle">
@@ -167,7 +168,7 @@
 
       <div class="col-12 yellow-block">
         <div class="col-12 bg-yellow toggler">
-          <img src="img/radio.svg" alt=""> <p>Radio abierta itinerante</p>
+          <img src="img/radio.svg" alt=""> <p>Radio abierta itinerante</p><span></span>
         </div>
 
         <div class="col-12 container-toggle">
@@ -183,7 +184,7 @@
 
       <div class="col-12 blue-block">
         <div class="col-12 bg-blue toggler">
-          <img src="img/biblioteca.svg" alt=""> <p>Biblioteca accesible CBC</p>
+          <img src="img/biblioteca.svg" alt=""> <p>Biblioteca accesible CBC</p><span></span>
         </div>
 
         <div class="col-12 container-toggle">
@@ -199,7 +200,7 @@
 
       <div class="col-12 orange-block">
         <div class="col-12 bg-orange toggler">
-          <img src="img/nutricion.svg" alt=""> <p>Nutrición con taller de cocina saludable</p>
+          <img src="img/nutricion.svg" alt=""> <p>Nutrición con taller de cocina saludable</p><span></span>
         </div>
 
         <div class="col-12 container-toggle">
@@ -215,7 +216,7 @@
 
       <div class="col-12 yellow-block">
         <div class="col-12 bg-yellow toggler">
-          <img src="img/musica.svg" alt=""> <p>Música</p>
+          <img src="img/musica.svg" alt=""> <p>Música</p><span></span>
         </div>
 
         <div class="col-12 container-toggle">
@@ -231,7 +232,7 @@
 
       <div class="col-12 blue-block">
         <div class="col-12 bg-blue toggler">
-          <img src="img/fotografia.svg" alt=""> <p>Fotografía “Otras miradas”</p>
+          <img src="img/fotografia.svg" alt=""> <p>Fotografía “Otras miradas”</p> <span></span>
         </div>
 
         <div class="col-12 container-toggle">
@@ -247,7 +248,7 @@
 
       <div class="col-12 orange-block">
         <div class="col-12 bg-orange toggler">
-          <img src="img/difusion.svg" alt=""> <p>Difusión de los derechos de las mujeres en los barrios</p>
+          <img src="img/difusion.svg" alt=""> <p>Difusión de los derechos de las mujeres en los barrios</p><span></span>
         </div>
 
         <div class="col-12 container-toggle">
@@ -263,7 +264,7 @@
 
       <div class="col-12 yellow-block">
         <div class="col-12 bg-yellow toggler">
-          <img src="img/trabajo.svg" alt=""> <p>Trabajo & Inclusión</p>
+          <img src="img/trabajo.svg" alt=""> <p>Trabajo & Inclusión</p><span></span>
         </div>
 
         <div class="col-12 container-toggle">
@@ -278,8 +279,46 @@
       </div>
 
     </section>
+
+
+    <style media="screen">
+      .button-container  svg{
+   position: absolute;
+   width: 1.1em;
+   right: 3px;
+   right: 3rem;
+   opacity: 0;
+   top: 50%;
+   -webkit-transform: translateY(-50%);
+   transform: translateY(-50%);
+   -webkit-transition: all 300ms ease-out;
+   transition: all 300ms ease-out;
+   will-change: right, opacity;
+
+      }
+
+      .button-container {
+    position: relative;
+    -webkit-transition: background-color 300ms ease-out;
+    transition: background-color 300ms ease-out;
+}
+      .button-container:hover p {
+    -webkit-transform: translate3d(-1rem, 0, 0);
+    transform: translate3d(-1rem, 0, 0);
+    transition: all 1s;
+
+    }
+
+    .button-container:hover svg {
+    opacity: 1;
+    right: -1rem;
+}
+    .button-container:hover p {
+    width: 200px;
+    }
+    </style>
     <div id="open-modal" class="button-container">
-      <p>Otros voluntariados</p>
+      <p>Otros voluntariados<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36.1 25.8" enable-background="new 0 0 36.1 25.8" xml:space="preserve"><g><line fill="none" stroke="#000" stroke-width="3" stroke-miterlimit="10" x1="0" y1="12.9" x2="34" y2="12.9"></line><polyline fill="none" stroke="#000" stroke-width="3" stroke-miterlimit="10" points="22.2,1.1 34,12.9 22.2,24.7   "></polyline></g></svg></p>
     </div>
 
 
@@ -516,7 +555,7 @@
   function toggle(){
     $(".toggler").on("click", function(){
 
-      // $(".container-toggle").each(function(){
+      // $(".cont ainer-toggle").each(function(){
       //   $(this).fadeOut("50");
       // });
 
