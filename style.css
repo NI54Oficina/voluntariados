@@ -45,6 +45,7 @@ header, div, section, footer{
   float: left;
   min-height: 1px;
      box-sizing: border-box;
+     position: relative;
 }
 
 img{
@@ -94,11 +95,12 @@ header{
 
 }
 
-header .header-inner{
+header .header-inner, .menu-mobile{
   /*width: 100%;*/
   background-color: #ee7d00;
     padding: 20px 8% 0px 8%;
 }
+
 
 header .header-inner .header-inner-left{
   /*padding-left: 20px;*/
@@ -620,6 +622,26 @@ footer div p span{
   margin-top: 15px;
 }
 
+.menu-mobile-button{
+  display: block;
+  width: 50px !important;
+  position: absolute;
+  top:0;
+  bottom:0;
+  margin: auto;
+}
+
+.menu-mobile{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+.menu-mobile li{
+  font-size: 2em;
+}
 @media (max-width: 785px){
 
   .col-6{
