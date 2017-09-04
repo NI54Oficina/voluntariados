@@ -642,11 +642,25 @@ footer div p span{
 .menu-mobile li{
   font-size: 2em;
   color:white;
+  height: 100px;
 }
 
 .elem-menu-mobile{
   display: none;
 }
+
+
+#slider .container-carrousel .owl-carousel .item{
+
+    background-color:#c4f4ff;
+    min-height: 150px;
+    width: 100%;
+    padding: 0 10%;
+
+  /*padding: 30px 10%;;*/
+  /*text-align: center;*/
+}
+
 @media (max-width: 1000px){
   .col-xs-12{
     width: 100% !important
@@ -713,5 +727,9 @@ footer div p span{
   /*.menu-mobile-button .elem-menu-mobile{
     display: none;
   }*/
+
+  #slider .container-carrousel .owl-carousel .item{
+      min-height:500px;
+  }
 
 }
