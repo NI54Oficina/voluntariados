@@ -408,6 +408,7 @@ header .header-inner .header-inner-right p{
   padding: 50px 100px;;
   position: relative;
   margin-bottom: 100px;
+  overflow: hidden;
   /*color:#a6a6a6;*/
 }
 .footer-slider p{
@@ -732,4 +733,9 @@ footer div p span{
       min-height:500px;
   }
 
+}
+
+
+#light-slider li{
+  display: inline-flex;
 }
