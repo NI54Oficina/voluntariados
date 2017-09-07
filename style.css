@@ -429,7 +429,8 @@ header .header-inner .header-inner-right p{
 footer{
   width: 100%;
   background-color: #232323;
-  border-top: 10px solid #f8af00;
+  /*border-top: 10px solid #f8af00;*/
+  box-shadow: inset 0px 10px 0px 0px #f8af00;
   position: relative;
 }
 
@@ -755,3 +756,52 @@ footer div p span{
 .caroufredsel_wrapper{
   margin: 0 !important;
 }
+
+
+/*---------------------------------*/
+
+
+/* this CS forms the triangles */
+footer:after,
+footer:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 47%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+
+/* this border color controlls the color of the triangle (what looks like the fill of the triangle) */
+footer:after {
+  top: 0;
+  left:0;
+  margin: auto;
+  right: 0;
+  border-color: white transparent transparent transparent;
+  border-width: 15px;
+}
+
+/* this border color controlls the outside, thin border */
+footer:before {
+    top:0;
+    left:0;
+    margin: auto;
+    right: 0;
+    border-color: #f8af00 transparent transparent transparent ;
+    border-width: 30px;
+}
+
+/*
+footer:after,
+footer:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}*/
