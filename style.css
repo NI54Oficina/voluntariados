@@ -794,14 +794,35 @@ footer:before {
     border-width: 30px;
 }
 
-/*
-footer:after,
-footer:before {
+/*--------------------------------------------------*/
+header:after,
+header:before {
     content: '';
     display: block;
     position: absolute;
-    left: 100%;
+    left: 47%;
     width: 0;
     height: 0;
     border-style: solid;
-}*/
+}
+
+
+/* this border color controlls the color of the triangle (what looks like the fill of the triangle) */
+header:after {
+  bottom: -15%;
+  left:0;
+  margin: auto;
+  right: 0;
+  border-color: white transparent transparent transparent;
+  border-width: 15px;
+}
+
+/* this border color controlls the outside, thin border */
+header:before {
+    bottom: -22%;
+    left:0;
+    margin: auto;
+    right: 0;
+    border-color: #ee7d00 transparent transparent transparent ;
+    border-width: 23px;
+}
