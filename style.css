@@ -751,3 +751,7 @@ footer div p span{
 .lSPager.lSpg{
   display: none !important;
 }
+
+.caroufredsel_wrapper{
+  margin: 0 !important;
+}

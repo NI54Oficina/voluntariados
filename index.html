@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+  <html>
   <head>
     <meta charset="utf-8">
     <!-- <meta name="viewport" content="width=device-width" /> -->
@@ -20,6 +20,9 @@
 
 
     <script src="lightslider.js"></script>
+
+    <script src="jquery.carouFredSel-6.2.1.js"></script>
+    <script src="jquery.carouFredSel-6.2.1-packed.js"></script>
 
     <header>
 
@@ -668,22 +671,42 @@ Este Voluntariado tiene como objetivo general brindar a niños, jóvenes y adole
 
   function light(){
 
-    $(document).ready(function() {
-         $("#light-slider").lightSlider({
-            auto: true,
-            slideMove:1,
-            slideEndAnimation:true,
-            enableDrag:false,
-            pauseOnHover: false,
-            loop: true,
-            margin:10,
-            autoWidth:true,
-            controls: false,
-            item:5,
-            speed: 50000,
-            pause: 500
-         });
+    // $(document).ready(function() {
+    //      $("#light-slider").lightSlider({
+    //         auto: true,
+    //         slideMove:1,
+    //         slideEndAnimation:true,
+    //         enableDrag:false,
+    //         pauseOnHover: false,
+    //         loop: true,
+    //         margin:10,
+    //         autoWidth:true,
+    //         controls: false,
+    //         item:5,
+    //         speed: 50000,
+    //         pause: 500
+    //      });
+    // });
+
+
+    var _scroll = {
+        delay: 1000,
+        easing: 'linear',
+        duration: 4000  ,
+        timeoutDuration: 0,
+        pauseOnHover: 'immediate'
+    };
+    $("#light-slider").carouFredSel({
+        width:1100,
+        align: false,
+        items: {
+            width: 'variable',
+            height: 39,
+            visible: 1,
+        },
+        scroll: _scroll
     });
+
 
   }
   </script>
