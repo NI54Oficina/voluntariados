@@ -733,9 +733,21 @@ footer div p span{
       min-height:500px;
   }
 
+  .img-toggle{
+    height: auto !important;
+  }
+
 }
 
 
 #light-slider li{
   display: inline-flex;
+}
+
+.lSSlideOuter{
+  width: 95% !important;
+}
+
+.lSPager.lSpg{
+  display: none !important;
 }
