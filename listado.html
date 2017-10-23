@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width" /> -->
+    <title>Voluntariados UBA</title>
+
+  </head>
+  <body>
+    <script type="text/javascript" src="jquery.min.js"></script>
+  	
+    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="lightslider.css" />
+    <script type="text/javascript" src="script.js"></script>
+
+    <link rel="stylesheet" href="owl.carousel.min.css">
+    <link rel="stylesheet" href="owl.theme.default.min.css">
+    <link rel="stylesheet" href="docs.theme.min.css">
+    <script src="owl.carousel.js"></script>
+
+
+    <script src="lightslider.js"></script>
+
+    <script src="jquery.carouFredSel-6.2.1.js"></script>
+    <script src="jquery.carouFredSel-6.2.1-packed.js"></script>
+
+    <header>
+
+      <div class="header-inner">
+        <div class="col-6 header-inner-left" hid="1">
+          <ul>
+            <a href="index.html"><li class="desplazamiento" >Volver al inicio</li></a>
+            
+          </ul>
+        </div>
+        <div class="col-6 header-inner-right" hid="1">
+          <img class="menu-mobile-button elem-menu-mobile" src="img/menu.svg" alt="">
+          <img class="main-logo center-to-parent" src="img/logo.png" alt="">
+        </div>
+      </div>
+
+    </header>
+	
+    <div class="col-12 border-left-colours" hid="2" style=" background-image:url(img/fondo-interna.jpg);height:200px; background-size:cover;background-position:bottom;background-repeat:no-repeat;">
+      
+
+    </div>
+	<div><div class="triangle"></div></div>
+	<div><div class="triangle2"></div></div>
+	
+	<div class="col-12 title-listado">
+	<h1>Voluntariados</h1>
+	<section class="titulo-voluntariados" style="width:100%;">
+	<h2 id="titulo-institucionales" class="selected">Institucionales</h2>
+	<h2 id="titulo-compromiso">Compromiso Social Universitario</h2>
+	<h2 id="titulo-ubanex">UBANEX</h2>
+	<h2 id="titulo-ong">ONG's asociadas al programa</h2>
+	</section>
+	</div>
+	
+	<nav class="menu-lateral">
+		<ul>
+			<li ><p>Inicio</p></li>
+			<li seccion="institucionales" class="selected"><p>Institucionales</p></li>
+			<li seccion="compromiso"><p>Compromiso Social Universitario</p></li>
+			<li seccion="ubanex"><p>UBANEX</p></li>
+			<li seccion="ong" ><p>ONG's asociadas al programa</p></li>
+		</ul>
+	</nav>
+	<section class="col-12 listado-voluntariados">
+		<div id="vol-institucionales"  class="col-12 voluntariado-list active"></div>
+		<div id="vol-compromiso" class="col-12 voluntariado-list "></div>
+		<div id="vol-ubanex" class="col-12 voluntariado-list "></div>
+		<div id="vol-ong" class="col-12 voluntariado-list"></div>
+		
+		
+	</section>   
+	<script>
+	/*var prueba={}
+	prueba["hola"]= new Array({titulo:'poyo',texto:"lorem impsum poyo"},"elemento 2");
+	console.log(JSON.stringify(prueba));*/
+	
+	$(window).load(function(){
+		console.log("entra?");
+		var auxClase="odd";
+		$.getJSON( "institucionales.json", function( data ) {
+			$.each(data.voluntariado,function(index,voluntariado){
+				
+				voluntariado.texto= voluntariado.texto.replace(/(?:\r\n|\r|\n)/g, '<br />');
+				var htmlVol= templateVol.replace("$titulo",voluntariado.titulo).replace("$texto",voluntariado.texto).replace("$link",voluntariado.link).replace("$clase",auxClase);
+				if(auxClase=="odd"){
+					auxClase="even";
+				}else{
+					auxClase="odd";
+				}
+				$("#vol-institucionales").append(htmlVol);
+			});
+		  
+		});
+		auxClase="odd";
+		$.getJSON( "compromiso.json", function( data ) {
+			$.each(data.voluntariado,function(index,voluntariado){
+				voluntariado.texto= voluntariado.texto.replace(/(?:\r\n|\r|\n)/g, '<br />');
+				var htmlVol= templateVol.replace("$titulo",voluntariado.titulo).replace("$texto",voluntariado.texto).replace("$link",voluntariado.link).replace("$clase",auxClase);
+				if(auxClase=="odd"){
+					auxClase="even";
+				}else{
+					auxClase="odd";
+				}
+				$("#vol-compromiso").append(htmlVol);
+			});
+		  
+		});
+		auxClase="odd";
+		$.getJSON( "ubanex.json", function( data ) {
+			$.each(data.voluntariado,function(index,voluntariado){
+				voluntariado.texto= voluntariado.texto.replace(/(?:\r\n|\r|\n)/g, '<br />');
+				var htmlVol= templateVol.replace("$titulo",voluntariado.titulo).replace("$texto",voluntariado.texto).replace("$link",voluntariado.link).replace("$clase",auxClase);
+				if(auxClase=="odd"){
+					auxClase="even";
+				}else{
+					auxClase="odd";
+				}
+				$("#vol-ubanex").append(htmlVol);
+			});
+		  
+		});
+		auxClase="odd";
+		$.getJSON( "ong.json", function( data ) {
+			$.each(data.voluntariado,function(index,voluntariado){
+				var htmlVol= templateVol.replace("$titulo",voluntariado.titulo).replace("$texto",voluntariado.texto).replace("$link",voluntariado.link).replace("$clase",auxClase);
+				if(auxClase=="odd"){
+					auxClase="even";
+				}else{
+					auxClase="odd";
+				}
+				$("#vol-ong").append(htmlVol);
+				if(window.location.hash) {
+		var hash= window.location.hash.replace("#","");
+		console.log(hash);
+		
+		$("[seccion="+hash+"]").click();
+	}
+			});
+		  
+		});
+	});
+	setTimeout(function(){
+	
+	},2000);
+	
+	$(".menu-lateral li").on("click",function(){
+		var attr = $(this).attr('seccion');
+
+		if (typeof attr !== typeof undefined && attr !== false) {
+			
+		
+		//$(".voluntariado-list.active").removeClass("active");
+		$(".voluntariado-list.active").css("opacity","0");
+		$(".titulo-voluntariados h2.selected").css("opacity","0");
+		
+		//console.log($(this).attr("seccion"));
+		//console.log("#vol-"+$(this).attr("seccion"));
+		$(this).addClass("selected");
+		 $('html, body').animate({
+			scrollTop: 0
+		}, 600);
+		var auxThis=this;
+		setTimeout(function(){
+			$(".voluntariado-list.active").removeClass("active");
+			$(".titulo-voluntariados h2.selected").removeClass("selected");
+			
+			$("#vol-"+$(auxThis).attr("seccion")).addClass("active");
+			$("#vol-"+$(auxThis).attr("seccion")).css("opacity","1");
+			
+			
+			$("#titulo-"+$(auxThis).attr("seccion")).addClass("selected");
+			///console.log("#titulo-"+$(auxThis).attr("seccion"));
+			$("#titulo-"+$(auxThis).attr("seccion")).css("opacity","1");
+			$(auxThis).addClass("selected");
+		},600);
+		
+		$('.menu-lateral li').removeClass("selected");
+		}else{
+			$(this).addClass("selected");
+			//$("h1").offset().top
+		 $('html, body').animate({
+			scrollTop: 0
+		}, 600);
+		}
+	});
+	
+	var templateVol='<div class="col-12 voluntariado $clase"><h3>$titulo</h3><div class="col-12 voluntariado-text"><p>$texto</p><a href="$link" class="hvr-icon-drop" target="_blank">Conocenos más </a></div></div>';
+	</script>
+	
+	
+    <footer>
+        <a href=""><img src="img/fb.png" alt=""></a>
+      <div class="col-6">
+        <p>VOLUNTARIADOS <span>UBA</span></p>
+      </div>
+
+      <div class="col-6">
+        <p>EXTENSION  <span>CBC</span></p>
+      </div>
+
+    </footer>
+	
+	</body>
+	
+</html>
